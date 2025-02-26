@@ -1,0 +1,588 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: auto;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+
+header{
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;  
+  align-items: center;
+  padding: 15px 200px;
+  transition: 0.5s ease ;
+}
+
+header .brand{
+    color: #fff;
+    font: size 1.5em; ;
+    font-weight:700 ;
+    text-transform:uppercase ;
+    text-decoration:none ;
+}
+header .navigation{
+    position: relative;
+}
+
+header .navigation .navigation-items a{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 30px;
+    transition: 0.3s ease;
+}
+
+header .navigation .navigation-items a::before{
+    content: '';
+    position: absolute;
+    background: #fff;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s ease;
+}
+
+header .navigation .navigation-items a:hover:before{
+    width: 100%;
+}
+
+section{
+    padding: 100px 200px;
+}
+
+.home{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color:#442913 ;
+}
+
+.home:before{
+    z-index: 777;
+    content:'' ;
+    position: absolute;
+    background:rgba(246, 226, 127, 0.1);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.home .content{
+    z-index: 888;
+    color: #fff;
+    width: 70%;
+    margin-top: 50px;
+    display: none;
+}
+
+.home .content.active{
+    display: block;
+    
+}
+
+
+.home .content h1{
+    font-size: 4em;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 75px;
+    margin-bottom: 40px;
+}
+
+.home .content h1 span{
+    font-size: 1.2em;
+    font-weight: 600;
+
+}
+
+.home .content p{
+    margin-bottom: 65px;
+
+}
+.home .content a{
+    background:#fff ;
+    padding: 15px 35px;
+    color: #442913;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 2px;
+
+}
+
+.home .media-icons{
+    z-index: 888;
+    position: absolute;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5 ease;
+}
+
+.home .media-icons a {
+    color: #fff;
+    font-size: 1.6em;
+    transition: 0.3s ease;}
+
+.home .media-icons a:not(:last-child){
+    margin-bottom: 20px;
+}
+
+.home .media-icons a:hover{
+    transform: scale(1.3);
+}
+
+.home video{
+    z-index: 000;
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.slider-navigation{
+    z-index: 888;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(80px);
+    margin-bottom: 12px;
+}
+
+.slider-navigation .nav-btn{
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(225, 225, 225, 0.5);
+    transition: 0.3 ease;
+}
+
+.slider-navigation .nav-btn.active{
+    background:#442913;
+}
+
+.slider-navigation .nav-btn:not(:last-child){
+    margin-right: 20px;
+
+}
+
+.slider-navigation .nav-btn:hover{
+    transform: scale(1.2);
+}
+
+.video-slide{
+   position: absolute;
+   width: 100%;
+   clip-path: circle(0% at 0 50%); 
+}
+
+.video-slide.active{
+    clip-path: circle(150% at 0 50%);
+    transition: 2s ease;
+    transition-property: clip-path; 
+}
+
+
+/*AQUI EMPIEZA EL CSS DE LOS DEMAS ELEMENTOS DE LA PAGINA */
+#proyectos {
+    width: 100vw; /* Ocupa todo el ancho de la pantalla */
+    background-color: #fff; /* Fondo color café */
+    padding: 20px 0; /* Espaciado arriba y abajo */
+    margin: 0; /* Sin márgenes */
+    box-sizing: border-box; /* Evita que el padding afecte el tamaño */
+  }
+  
+  .textogetero {
+    text-align: center; /* Centra el texto */
+    color:#000; /* Texto blanco */
+    font-size: 1.2rem; /* Tamaño del texto */
+    padding: 20px; /* Espaciado interno */
+  }
+  
+  .tarjetero {
+    color: #000;
+    display: flex; /* Usa flexbox para organizar las tarjetas en fila */
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten en pantallas pequeñas */
+    justify-content: space-around; /* Distribuye las tarjetas uniformemente */
+    padding: 20px; /* Espaciado alrededor */
+  }
+  
+  .card {
+    width: 23%; /* Cada tarjeta ocupa aproximadamente 1/4 del ancho */
+    background-color: #fff; /* Fondo blanco para las tarjetas */
+    border: none; /* Elimina bordes */
+    box-shadow: none; /* Elimina sombras */
+    margin: 10px 0; /* Espaciado arriba y abajo */
+  }
+  
+  .card img {
+    width: 100%; /* Hace que la imagen se ajuste completamente */
+    height: auto; /* Mantiene la proporción */
+  }
+  
+  .card-body {
+    padding: 15px; /* Espaciado interno de la tarjeta */
+    text-align: center; /* Centra el contenido de la tarjeta */
+  }
+  
+  .card-title {
+    font-size: 1.2rem; /* Tamaño del título */
+    margin-bottom: 10px; /* Espaciado debajo del título */
+  }
+  
+  .card-text {
+    font-size: 1rem; /* Tamaño del texto */
+  }
+  
+  .btn {
+    background-color: #000; /* Botón negro */
+    color: #fff; /* Texto blanco */
+    text-decoration: none; /* Sin subrayado */
+    padding: 8px 15px; /* Espaciado interno */
+    border: none; /* Sin bordes */
+    display: inline-block; /* Se comporta como un botón */
+    transition: background 0.3s ease; /* Efecto al pasar el mouse */
+  }
+  
+  .btn:hover {
+    background-color: #333; /* Oscurece el botón al pasar el mouse */
+  }
+  
+ 
+
+/*segunda seccion*/
+
+#servicios_raw {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     /* Espacio entre los dos divs */
+    padding: 50px 10%;
+    background-color: #007bff;
+}
+
+/* Estilos para el texto a la izquierda */
+/* Estilos generales */
+section {
+    width: 100vw; /* Ocupa todo el ancho de la pantalla */
+    background-color: #6A4E23; /* Color de fondo café */
+    padding: 20px 0; /* Espaciado arriba y abajo */
+    margin: 0; /* Sin márgenes */
+    box-sizing: border-box; /* Evita que el padding afecte el tamaño */
+  }
+  
+  /* SERVICIOS RAW */
+  #servicios_raw {
+    display: flex; /* Organiza los elementos en fila */
+    justify-content: space-between; /* Separa el texto y la imagen */
+    align-items: center; /* Centra verticalmente */
+  }
+  
+  .serv-raw {
+    width: 50%; /* Ocupa la mitad izquierda de la pantalla */
+    text-align: center; /* Centra el texto */
+    color: #fff; /* Texto blanco */
+    font-size: 1.2rem; /* Tamaño de letra mediano */
+    padding: 20px; /* Espaciado interno */
+  }
+  
+  .ser-img {
+    width: 50%; /* Ocupa la mitad derecha de la pantalla */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra la imagen y el enlace */
+    justify-content: center;
+  }
+  
+  .ser-img img {
+    width: 100%; /* Hace que la imagen ocupe todo el espacio disponible */
+    height: auto; /* Mantiene la proporción */
+  }
+  
+  .ser-img a {
+    position: absolute;
+    background-color: #000; /* Botón negro */
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 1rem;
+    border: none;
+    transition: background 0.3s ease;
+  }
+  
+  .ser-img a:hover {
+    background-color: #333; /* Oscurece el botón al pasar el mouse */
+  }
+  
+  /* NOSOTROS */
+  #nosotros {
+    text-align: center; /* Centra el contenido */
+    color: #fff; /* Texto blanco */
+    padding: 40px 20px; /* Espaciado interno */
+  }
+  
+  .no-tros {
+    max-width: 800px; /* Limita el ancho del contenido */
+    margin: 0 auto; /* Centra el bloque */
+  }
+  
+  .no-tros h1 {
+    font-size: 2rem; /* Tamaño del título */
+    margin-bottom: 10px;
+  }
+  
+  .no-tros p {
+    font-size: 1.2rem; /* Tamaño del texto mediano */
+  }
+  
+ 
+
+#galeria-s {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Espacio entre el carrusel y el texto */
+    padding: 50px 10%;
+}
+
+/* Estilos para el carrusel */
+#carouselExample {
+    width: 50%;
+    max-width: 600px; /* Tamaño máximo para que no sea demasiado grande */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Estilos para el texto a la derecha */
+.text-gale {
+    width: 50%;
+    background-color: #8B5E3B; /* Color café */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.text-gale h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+/*este es el de coontaaaaaaaaaactanosososomcksfnvf.vjanefbljnaf/lb*/
+
+#contactanos {
+    width: 100vw; /* Hace que ocupe todo el ancho de la ventana */
+    height: 700px; /* Opcional, para que tenga un alto relativo */
+    background-color: #FFEB3B; /* Fondo amarillo */
+    display: flex; /* Usa flexbox para centrar el contenido */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    padding: 0; /* Elimina padding */
+    margin: 0; /* Elimina márgenes */
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño */
+  }
+  
+  .conta-text {
+    text-align: center; /* Centra el texto dentro del contenedor */
+    padding: 20px; /* Añade un poco de padding interno */
+  }
+  
+  .conta-text h1 {
+    font-size: 2.5rem; /* Tamaño grande para el título */
+    margin-bottom: 2px; /* Espacio debajo del título */
+  }
+  
+  .conta-text span {
+    display: block; /* Para que el span ocupe todo el ancho */
+    font-size: 1.5rem; /* Tamaño de fuente un poco más pequeño */
+    margin-bottom: 20px; /* Espacio debajo del span */
+  }
+  
+  .conta-text p {
+    font-size: 1rem; /* Tamaño de fuente normal para el párrafo */
+    margin-bottom: 20px; /* Espacio debajo del párrafo */
+  }
+  
+  .conta-text a {
+    display: inline-block; /* Para que el enlace sea un bloque */
+    background-color: #000; /* Fondo negro para el botón */
+    color: #fff; /* Color blanco para el texto */
+    padding: 10px 20px; /* Espaciado del botón */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    border-radius: 3px; /* Bordes redondeados */
+    font-size: 1rem; /* Tamaño del texto en el botón */
+    transition: background-color 0.3s ease; /* Efecto de transición */
+  }
+  
+  .conta-text a:hover {
+    background-color: #333; /* Cambia el color de fondo al pasar el mouse */
+  }
+  
+  /*foteerrrrrrr*/
+  footer {
+    width: 100vw; /* Hace que ocupe todo el ancho de la ventana */
+    background-color: #6A4E23; /* Fondo color café */
+    display: flex; /* Usamos flexbox para alinear los divs en fila */
+    justify-content: space-around; /* Espacia los divs de forma equitativa */
+    padding: 20px 0; /* Espaciado interno en la parte superior e inferior */
+    margin: 0; /* Elimina márgenes */
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+  }
+  
+  .text-footer {
+    color: #fff; /* El texto será blanco */
+    text-align: left; /* Alinea el texto a la izquierda */
+    padding: 0 20px; /* Espaciado interno a los lados */
+  }
+  
+  .text-footer h2 {
+    font-size: 1.5rem; /* Tamaño de fuente más grande para los títulos */
+    margin-bottom: 10px; /* Espacio debajo de los títulos */
+  }
+  
+  .text-footer a {
+    display: block; /* Hace que cada enlace ocupe toda la línea */
+    color: #fff; /* Enlaces en blanco */
+    text-decoration: none; /* Elimina subrayado */
+    margin-bottom: 8px; /* Espacio entre los enlaces */
+    font-size: 1rem; /* Tamaño de fuente para los enlaces */
+    transition: color 0.3s ease; /* Efecto de transición al pasar el mouse */
+  }
+  
+  .text-footer a:hover {
+    color: #FFD700; /* Cambia el color del enlace cuando se pasa el mouse */
+  }
+  
+  .text-footer p {
+    font-size: 1rem; /* Tamaño de fuente normal para el párrafo */
+    margin-bottom: 10px; /* Espacio debajo del párrafo */
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width:1040px){
+    header{
+        padding: 12px 20px;
+    }
+
+    section{
+        padding: 100px 20px;
+    }
+
+    .home .media-icons{
+        right: 15px;
+    }
+    header .navigation{
+       display: none;
+    }
+
+    header .navigation.active{
+        position:fixed ;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(1, 1,1,0.5);
+    }
+
+    header .navigation .navigation-items a{
+        color: #442913;
+        font-size: 1.2em;
+        margin: 20px;
+    }
+
+    header .navigation .navigation-items a::before{
+        background: #442913;
+        height: 5px;
+
+    }
+
+    header .navigation.active .navigation-items{
+        background: #fff;
+        width: 600px;
+        max-width: 600px;
+        margin: 20px;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 5px;
+        box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
+    }
+
+
+
+    .menu-btn {
+        background: url(menu.png)no-repeat;
+        background-size: 30px;
+        background-position:center ;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    .menu-btn.active{
+       z-index: 999;
+       background: url(cLose.png)no-repeat;
+       background-size: 25px;
+       background-position: center;
+       transition: 0.3s ease; 
+    }
+}
